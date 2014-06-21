@@ -5,4 +5,23 @@
 {% block content %}
 <h1>{{ event.name }}</h1>
 <p>{{ event.description }}</p>
+
+<div id="comments">
+{% for comment in comments %}
+<p class="person">{{ comment.name }} said</p>
+<p class="comment">{{ comment.comment }}</p>
+{% endfor %}
+</div>
+
+<form class="form-horizontal" method="post" id="eventform" action="/matchtheevent/events/{{ event.id }}/comment">
+  <fieldset>
+  <legend>Post a comment</legend>
+  <p>Name:<input type="text" name="name" /></p>
+  <p>Comment:<textarea name="comment" rows="6" cols="50"></textarea></p>
+  <div class="form-actions">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+  </fieldset>
+</form>
+
 {% endblock %}
