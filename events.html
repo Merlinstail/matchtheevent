@@ -1,0 +1,7 @@
+<title>{% block title %}{% endblock %}</title>
+<ul>
+{% for event in events %}
+  <li><a href="{{ event.title }}">/events/{{ event.id }}</a></li>
+{% endfor %}
+</ul>
+
