@@ -1,7 +1,10 @@
-<title>{% block title %}{% endblock %}</title>
+{% extends "matchtheevent/base.html" %} 
+{% block title %}Events{% endblock %}
+{% block content %}
 <ul>
 {% for event in events %}
   <li><a href="./events/{{ event.id }}">{{event.name}}</a></li>
 {% endfor %}
 </ul>
 
+{% endblock %}
