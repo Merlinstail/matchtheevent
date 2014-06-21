@@ -1,13 +1,16 @@
-<title>{% block title %}{% endblock %}</title>
+{% extends "matchtheevent/base.html" %} 
 
-<form class="form-horizontal">
+{% block title %}Create an event{% endblock %}
+{% block content %}
+<form class="form-horizontal" method="post" id="eventform" action="#">
   <fieldset>
   <legend>Create a new event</legend>
-                        {{ field(fancy_form.title) }}
-                        {{ field(fancy_form.description}}
+  <p>Name:<input type="text" name="name" /></p>
+  <p>Description:<textarea name="description" rows="6" cols="50"></textarea></p>
   <div class="form-actions">
     <button type="submit" class="btn btn-primary">Submit</button>
-    <a href="#" class="btn">Cancel</a>
   </div>
   </fieldset>
 </form>
+
+{% endblock %}
