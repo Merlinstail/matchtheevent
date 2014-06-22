@@ -190,7 +190,7 @@ textarea { overflow: auto; }
 .main .cols .col .col-cnt { height: 100%; overflow: hidden; }
 
 .main .post { padding-left: 32px; padding-right: 32px; }
-.main .post img { float: left; margin-right: 18px; width: 333px; height: 333px; }
+.main .post img { float: left; margin-right: 18px; width: 333px; height: 209px; }
 .main .post-cnt { padding-top: 22px; }
 .main .post-cnt p { padding-bottom: 10px; }
 .main .post-cnt ul { list-style: none; list-style-position: outside; height: 100%; overflow: hidden; }
@@ -283,7 +283,7 @@ textarea { overflow: auto; }
 
 	#carousel h3 { font-size: 58px; width: 290px; left: 10px; }
 	#carousel h5 { font-size: 15px; width: 290px; left: 10px; }
-	#carousel p { font-size: 14px;  width: 294px; left: 10px; }
+	#carousel p { color: 00FFFF; font-size: 14px;  width: 294px; left: 10px; }
 	#carousel a.green-btn { top: 340px; left: 10px; }
 
 
