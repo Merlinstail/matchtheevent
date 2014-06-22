@@ -1,4 +1,4 @@
-{% extends "matchtheevent/base.html" %}
+{% extends "base.html" %}
 
 {% block title %}{{ event.name }}{% endblock %}
 
@@ -7,17 +7,17 @@
 <p>{{ event.description }}</p>
 
 <div id="comments">
-{% for comment in comments %}
-<p class="person">{{ comment.name }} said</p>
+{% for comment in event.comment_set.all %}
+<p class="person">At {{comment.created }}, {{ comment.name }} said</p>
 <p class="comment">{{ comment.comment }}</p>
 {% endfor %}
 </div>
 
-<form class="form-horizontal" method="post" id="eventform" action="/matchtheevent/events/{{ event.id }}/comment">
+<form class="form-horizontal" method="post" id="eventform" action="/events/{{ event.id }}/post_comment"> {% csrf_token %}
   <fieldset>
   <legend>Post a comment</legend>
-  <p>Name:<input type="text" name="name" /></p>
-  <p>Comment:<textarea name="comment" rows="6" cols="50"></textarea></p>
+  <p><div class="field-label">Name:</div><input type="text" name="name" /></p>
+  <p><div class="field-label">Comment:</div><textarea name="comment" rows="6" cols="50"></textarea></p>
   <div class="form-actions">
     <button type="submit" class="btn btn-primary">Submit</button>
   </div>

@@ -1,12 +1,13 @@
-{% extends "matchtheevent/base.html" %} 
+{% extends "base.html" %} 
 
 {% block title %}Create an event{% endblock %}
 {% block content %}
-<form class="form-horizontal" method="post" id="eventform" action="#">
+<form class="form-horizontal" method="post" id="eventform" action="#"> 
+{% csrf_token %}
   <fieldset>
   <legend>Create a new event</legend>
-  <p>Name:<input type="text" name="name" /></p>
-  <p>Description:<textarea name="description" rows="6" cols="50"></textarea></p>
+  <p><div class="field-label">Name:</div><input type="text" name="name" /></p>
+  <p><div class="field-label">Description:</div><textarea name="description" rows="6" cols="50"></textarea></p>
   <div class="form-actions">
     <button type="submit" class="btn btn-primary">Submit</button>
   </div>
